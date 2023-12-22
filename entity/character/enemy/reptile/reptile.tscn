@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://gnnssj2wwms3"]
+
+[ext_resource type="PackedScene" uid="uid://dy0x7ku3bnmtj" path="res://entity/character/enemy/enemy.tscn" id="1_5wm2d"]
+[ext_resource type="Resource" uid="uid://cymrsufw4j8x8" path="res://resource/character_data/enemy_data/reptile_data/reptile_data.tres" id="2_47y7d"]
+[ext_resource type="Script" path="res://entity/character/enemy/reptile/reptile.gd" id="2_vyo04"]
+[ext_resource type="Texture2D" uid="uid://bakxacy7c6k2c" path="res://asset/texture/enemy/reptile/Reptile.png" id="3_qm23i"]
+
+[node name="Reptile" instance=ExtResource("1_5wm2d")]
+script = ExtResource("2_vyo04")
+character_data = ExtResource("2_47y7d")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("3_qm23i")

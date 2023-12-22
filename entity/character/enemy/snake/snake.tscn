@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://ys8wd43m7imp"]
+
+[ext_resource type="PackedScene" uid="uid://dy0x7ku3bnmtj" path="res://entity/character/enemy/enemy.tscn" id="1_ss6a6"]
+[ext_resource type="Script" path="res://entity/character/enemy/snake/snake.gd" id="2_msvve"]
+[ext_resource type="Texture2D" uid="uid://b7xbe5qr7l550" path="res://asset/texture/enemy/snake/Snake.png" id="2_ppqky"]
+[ext_resource type="Resource" uid="uid://bv6rcunqpbhyd" path="res://resource/character_data/enemy_data/snake_data/snake_data.tres" id="3_x5ksg"]
+
+[node name="Snake" instance=ExtResource("1_ss6a6")]
+script = ExtResource("2_msvve")
+character_data = ExtResource("3_x5ksg")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_ppqky")

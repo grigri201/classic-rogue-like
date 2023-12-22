@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq0ebixx5qrry"]
+
+[ext_resource type="PackedScene" uid="uid://70ubkmhktb56" path="res://entity/pickable_object/item/item.tscn" id="1_nxmna"]
+[ext_resource type="Script" path="res://entity/pickable_object/item/heart_pot/heart_pot.gd" id="2_mogf5"]
+[ext_resource type="Texture2D" uid="uid://bgfbp3iptre83" path="res://asset/texture/item/potion/LifePot.png" id="2_okfa4"]
+
+[node name="HeartPot" instance=ExtResource("1_nxmna")]
+script = ExtResource("2_mogf5")
+health_increase = 30
+object_name = "Heart Pot"
+description = "a big posion"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_okfa4")

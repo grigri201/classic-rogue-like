@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://jdqd38pky1fh"]
+
+[ext_resource type="PackedScene" uid="uid://cwef6gmf0llul" path="res://entity/pickable_object/item/heart/heart.tscn" id="1_k05qo"]
+[ext_resource type="Script" path="res://resource/character_data/enemy_data/enemy_data.gd" id="1_kn2yf"]
+
+[resource]
+script = ExtResource("1_kn2yf")
+death_drop_experience = 2.0
+death_drop_pickable_objects = {
+ExtResource("1_k05qo"): 1.0
+}
+name = "Mole"
+slight = 8
+strength = 2
+constitution = 2
+agility = 2
+strength_increament_effects = {
+"attack": 2,
+"defense": 1
+}
+constitution_increament_effects = {
+"health": 3,
+"max_health": 3
+}
+agility_increament_effects = {
+"critical": 0.01,
+"dodge": 0.01
+}

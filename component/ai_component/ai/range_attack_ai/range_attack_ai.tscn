@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgs2vugqge5jb"]
+
+[ext_resource type="Script" path="res://component/ai_component/ai/range_attack_ai/range_attack_ai.gd" id="1_rgwqy"]
+
+[node name="RangeAttackAi" type="Node"]
+script = ExtResource("1_rgwqy")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0

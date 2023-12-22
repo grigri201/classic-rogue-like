@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctiedv5av3yed"]
+
+[ext_resource type="Script" path="res://manager/map_manager/map_generator/dungeon_generator/dungeon_generator.gd" id="1_3talo"]
+
+[node name="DungeonGenerator" type="Node2D"]
+script = ExtResource("1_3talo")

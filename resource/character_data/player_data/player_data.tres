@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3 uid="uid://ckir1rvsd2ab"]
+
+[ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="1_617jk"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_617jk")
+base_levelup_experience_threshold = 100
+levelup_experience_threshold_increament = 0.2
+base_attribute_points_gain_per_level = 5
+name = "Player"
+slight = 6
+strength = 8
+constitution = 8
+agility = 8
+strength_increament_effects = {
+"attack": 2,
+"defense": 1
+}
+constitution_increament_effects = {
+"health": 3,
+"max_health": 3
+}
+agility_increament_effects = {
+"critical": 0.01,
+"dodge": 0.01
+}

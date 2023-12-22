@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs1qj5xwmyv0t"]
+
+[ext_resource type="Script" path="res://manager/fsm/fsm.gd" id="1_oy2ay"]
+[ext_resource type="PackedScene" uid="uid://d2jxgrwnatinp" path="res://manager/fsm/game_state/start_state/start_state.tscn" id="2_jipyo"]
+[ext_resource type="PackedScene" path="res://manager/fsm/game_state/wait_for_input_state/wait_for_input_state.tscn" id="3_ovotb"]
+[ext_resource type="PackedScene" uid="uid://d3nfstrcxp86s" path="res://manager/fsm/game_state/action_state/action_state.tscn" id="4_7ydfo"]
+[ext_resource type="PackedScene" uid="uid://cbm3qlweb3c4e" path="res://manager/fsm/game_state/combat_state/combat_state.tscn" id="5_nw8w4"]
+
+[node name="Fsm" type="Node"]
+script = ExtResource("1_oy2ay")
+
+[node name="StartState" parent="." instance=ExtResource("2_jipyo")]
+
+[node name="WaitForInputState" parent="." instance=ExtResource("3_ovotb")]
+
+[node name="ActionState" parent="." instance=ExtResource("4_7ydfo")]
+
+[node name="CombatState" parent="." instance=ExtResource("5_nw8w4")]

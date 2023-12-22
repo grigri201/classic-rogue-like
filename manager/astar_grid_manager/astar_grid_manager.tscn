@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cley4nbpeuhsm"]
+
+[ext_resource type="Script" path="res://manager/astar_grid_manager/astar_grid_manager.gd" id="1_km2bx"]
+
+[node name="AstarGridManager" type="Node"]
+script = ExtResource("1_km2bx")

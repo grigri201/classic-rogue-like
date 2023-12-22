@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://70ubkmhktb56"]
+
+[ext_resource type="PackedScene" uid="uid://bopxtvec3c06n" path="res://entity/pickable_object/pickable_object.tscn" id="1_7a4yr"]
+[ext_resource type="Script" path="res://entity/pickable_object/item/item.gd" id="2_lrvif"]
+
+[node name="Item" instance=ExtResource("1_7a4yr")]
+script = ExtResource("2_lrvif")

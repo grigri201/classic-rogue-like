@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3nfstrcxp86s"]
+
+[ext_resource type="Script" path="res://manager/fsm/game_state/action_state/action_state.gd" id="1_sco2x"]
+
+[node name="ActionState" type="Node"]
+script = ExtResource("1_sco2x")

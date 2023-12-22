@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bopxtvec3c06n"]
+
+[ext_resource type="Script" path="res://entity/pickable_object/pickable_object.gd" id="1_uyit4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8mw6"]
+size = Vector2(16, 16)
+
+[node name="PickableObject" type="Node2D"]
+script = ExtResource("1_uyit4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_l8mw6")

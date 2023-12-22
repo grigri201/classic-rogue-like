@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3chxjnqxcs05"]
+
+[ext_resource type="Script" path="res://manager/fsm/game_state/wait_for_input_state/wait_for_input_state.gd" id="1_ttdc8"]
+
+[node name="WaitForInputState" type="Node"]
+script = ExtResource("1_ttdc8")

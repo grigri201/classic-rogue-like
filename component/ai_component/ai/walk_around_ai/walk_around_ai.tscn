@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1np3feeus5dg"]
+
+[ext_resource type="Script" path="res://component/ai_component/ai/walk_around_ai/walk_around_ai.gd" id="1_pkm70"]
+
+[node name="WalkAroundAi" type="Node"]
+script = ExtResource("1_pkm70")

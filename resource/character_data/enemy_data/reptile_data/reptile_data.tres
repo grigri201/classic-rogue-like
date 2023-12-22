@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3 uid="uid://cymrsufw4j8x8"]
+
+[ext_resource type="Script" path="res://resource/character_data/enemy_data/enemy_data.gd" id="1_7cplb"]
+
+[resource]
+script = ExtResource("1_7cplb")
+death_drop_experience = 2.0
+death_drop_pickable_objects = {}
+name = "Reptile"
+slight = 9
+strength = 2
+constitution = 2
+agility = 2
+strength_increament_effects = {
+"attack": 2,
+"defense": 1
+}
+constitution_increament_effects = {
+"health": 3,
+"max_health": 3
+}
+agility_increament_effects = {
+"critical": 0.01,
+"dodge": 0.01
+}
