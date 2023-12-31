@@ -3,7 +3,7 @@ class_name CharacterData
 
 @export var name: String
 
-@export var slight: int
+@export var sight: int
 
 @export var strength: int
 @export var constitution: int

@@ -4,7 +4,8 @@ static func PhysicsLayer():
     return {
         "BLOCK_MOVEMENT": 1, #value should be bit number, 1, 2, 4, 8, 16, 32, 64, 128, 256, etc
         "BLOCK_SIGHT": 2,
-        "PICKABLE_OBJECT": 4
+        "PICKABLE_OBJECT": 4,
+        "FOG": 8
     }
 
 static func TileMapLayer():
@@ -21,6 +22,14 @@ static func TerrainSet():
 
 static func Terrain():
     return {
-        "FLOOR": 0,
+        "ROAD": 0,
         "WALL": 1,
+        "FLOOR": 2,
+    }
+
+static func FogTerrain():
+    return {
+        "UNEXPLORED": 0,
+        "OUT_OF_SIGHT": 1,
+        "IN_SIGHT": 2,
     }

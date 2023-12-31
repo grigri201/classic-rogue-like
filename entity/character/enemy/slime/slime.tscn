@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://hffdl5k4hipv"]
+[gd_scene load_steps=6 format=3 uid="uid://hffdl5k4hipv"]
 
 [ext_resource type="PackedScene" uid="uid://dy0x7ku3bnmtj" path="res://entity/character/enemy/enemy.tscn" id="1_68u3a"]
 [ext_resource type="Script" path="res://entity/character/enemy/slime/slime.gd" id="2_b132q"]
-[ext_resource type="Texture2D" uid="uid://crnago52jhig8" path="res://asset/texture/enemy/slime/Slime.png" id="2_smrqh"]
 [ext_resource type="Resource" uid="uid://b7o3tga5v5b5o" path="res://resource/character_data/enemy_data/slime_data/slime_data.tres" id="3_h0iwg"]
+[ext_resource type="PackedScene" uid="uid://dpp8qsr2mohqa" path="res://component/ai_component/ai/skill_ai/skill_ai.tscn" id="4_oeobl"]
+[ext_resource type="PackedScene" uid="uid://bb0s01cjuy87f" path="res://component/ai_component/ai/walk_around_ai/square_move_ai.tscn" id="4_qbdw6"]
 
 [node name="Slime" instance=ExtResource("1_68u3a")]
 script = ExtResource("2_b132q")
 character_data = ExtResource("3_h0iwg")
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource("2_smrqh")
+region_rect = Rect2(64, 512, 16, 16)
+
+[node name="SkillAi" parent="AiComponent" index="0" instance=ExtResource("4_oeobl")]
+
+[node name="SquareMoveAi" parent="AiComponent" index="1" instance=ExtResource("4_qbdw6")]

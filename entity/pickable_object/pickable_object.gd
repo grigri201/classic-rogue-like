@@ -13,5 +13,5 @@ func initialize():
   _tile_map = get_tree().current_scene.get_node("%TileMap")
   _player = get_tree().current_scene.get_node("%Player")
 
-func update():
+func update(_delta):
   assert(false, "this method must be overriden")

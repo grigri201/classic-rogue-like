@@ -29,8 +29,8 @@ func initialize():
   _action_state.initialize()
   _combat_state.initialize()
 
-func update():
-  _current_state.update()
+func update(_delta):
+  _current_state.update(_delta)
 
 func _on_start_state_changed():
   _current_state = _wait_for_input_state

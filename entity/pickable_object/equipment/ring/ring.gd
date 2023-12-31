@@ -3,6 +3,6 @@ extends Equipment
 func initialize():
   super.initialize()
   
-func update():
+func update(_delta):
   assert(false, "this method must be overriden")
   

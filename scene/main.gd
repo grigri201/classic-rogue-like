@@ -7,4 +7,4 @@ func _ready():
   fsm.initialize()
 
 func _process(_delta):
-  fsm.update();
+  fsm.update(_delta);

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp6p8l7ft8osa"]
+[gd_scene load_steps=5 format=3 uid="uid://dp6p8l7ft8osa"]
 
 [ext_resource type="PackedScene" uid="uid://dw8alcjhbtiqx" path="res://entity/character/character.tscn" id="1_n1tuu"]
 [ext_resource type="Resource" uid="uid://ckir1rvsd2ab" path="res://resource/character_data/player_data/player_data.tres" id="2_4ea0i"]
 [ext_resource type="Script" path="res://entity/character/player/player.gd" id="2_hjkvl"]
 [ext_resource type="Script" path="res://entity/character/player/player_debugger.gd" id="3_x4ysv"]
-[ext_resource type="Texture2D" uid="uid://bh008fymrchl" path="res://asset/texture/green_ninja/sprite.png" id="5_su8vn"]
 
 [node name="Player" instance=ExtResource("1_n1tuu")]
 script = ExtResource("2_hjkvl")
@@ -14,4 +13,4 @@ character_data = ExtResource("2_4ea0i")
 script = ExtResource("3_x4ysv")
 
 [node name="Sprite" parent="." index="1"]
-texture = ExtResource("5_su8vn")
+region_rect = Rect2(80, 560, 16, 16)

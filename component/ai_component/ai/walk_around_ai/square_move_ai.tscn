@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb0s01cjuy87f"]
+
+[ext_resource type="Script" path="res://component/ai_component/ai/walk_around_ai/square_move_ai.gd" id="1_10k2k"]
+
+[node name="SquareMoveAi" type="Node"]
+script = ExtResource("1_10k2k")

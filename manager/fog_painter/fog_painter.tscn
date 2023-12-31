@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdqkunjh5b1vg"]
+
+[ext_resource type="Script" path="res://manager/fog_painter/fog_painter.gd" id="1_cywf2"]
+
+[node name="FogPainter" type="Node"]
+script = ExtResource("1_cywf2")

@@ -5,10 +5,11 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_7rbpe")
+skill_cooldown = 10
 death_drop_experience = 2.0
 death_drop_pickable_objects = {}
 name = "Slime"
-slight = 6
+sight = 1
 strength = 2
 constitution = 2
 agility = 2

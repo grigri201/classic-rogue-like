@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://hgmrst0xb3yw"]
+
+[ext_resource type="Texture2D" uid="uid://btfcdmweb2lc" path="res://asset/texture/the_roguelike_1bit.png" id="1_b1ilt"]
+
+[resource]
+atlas = ExtResource("1_b1ilt")
+region = Rect2(80, 400, 16, 16)

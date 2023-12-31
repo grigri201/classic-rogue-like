@@ -1,12 +1,13 @@
 extends Node
 class_name InputHandler
 
-signal movement_input(direction: Vector2)
+signal movement_input(direction: Vector2i)
 signal toggle_inventory_window_input()
+signal skip_round_input()
 
 var _interrupt_movement_timer: Timer
-var _max_interrupt_time: float = 0.5
-var _min_interrupt_time: float = 0.1
+var _max_interrupt_time: float = 0.4
+var _min_interrupt_time: float = 0.2
 var _current_duration: float
 var _player: Node2D
 var _map_manager: MapManager
@@ -24,14 +25,22 @@ func initialize():
   _inventory_window = get_tree().current_scene.get_node("%InventoryWindow")
   _pickable_object_container = get_tree().current_scene.get_node("%PickableObjectContainer")
 
-func update():
+func update(_delta):
   if _player.is_dead:
     return
   if handle_toggle_inventory_window_input():
     return
   if _inventory_window.visible:
     return
+  if handle_skip_round_input():
+    return
   handle_movement_input()
+
+func handle_skip_round_input():
+  if Input.is_action_just_pressed("skip_round"):
+    skip_round_input.emit()
+    return true
+  return false
 
 func handle_toggle_inventory_window_input():
   if Input.is_action_just_pressed("toggle_inventory_window"):
@@ -41,17 +50,16 @@ func handle_toggle_inventory_window_input():
 
 func handle_movement_input() -> bool:
   var movement_direction = get_movement_direction()
-  if movement_direction == Vector2.ZERO:
-    _interrupt_movement_timer.stop()
+  if movement_direction == Vector2i.ZERO:
     _current_duration = _max_interrupt_time
     return false
-  if not _interrupt_movement_timer.is_stopped():
+  if !_interrupt_movement_timer.is_stopped():
     return false
+  _interrupt_movement_timer.start(_current_duration)
+  _current_duration = _min_interrupt_time
   try_handle_attack(movement_direction)
   try_handle_pickup(movement_direction)
   movement_input.emit(movement_direction)
-  _interrupt_movement_timer.start(_current_duration)
-  _current_duration = _min_interrupt_time
   return true;
 
 func get_movement_direction():
@@ -59,8 +67,8 @@ func get_movement_direction():
   var movement_vertical = Input.get_action_strength("player_move_down") - Input.get_action_strength("player_move_up")
   # limit movment in 4 direction
   if movement_horizontal != 0 and movement_vertical != 0:
-    return Vector2.ZERO
-  return Vector2(movement_horizontal, movement_vertical).sign()
+    return Vector2i.ZERO
+  return Vector2i(Vector2(movement_horizontal, movement_vertical).sign())
 
 func try_handle_attack(direction: Vector2i) -> bool:
   # TODO handle range attack later

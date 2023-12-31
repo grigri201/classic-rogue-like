@@ -10,13 +10,14 @@ func initialize():
   _map_data = _map_manager.map_data
 
   astar_grid = AStarGrid2D.new()
-  astar_grid.region = Rect2(0, 0, _map_data.map_size.x, _map_data.map_size.y)
+  astar_grid.region = Rect2(0, 0, _map_data.max_width, _map_data.max_height)
   astar_grid.cell_size = _map_data.cell_size
+  astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 
   astar_grid.update()
 
-  for i in range(_map_data.map_size.x):
-    for j in range(_map_data.map_size.y):
+  for i in range(_map_data.max_width):
+    for j in range(_map_data.max_height):
       var cell = Vector2i(i, j)
       if is_cell_solid(cell):
         astar_grid.set_point_solid(cell, true)
@@ -29,5 +30,5 @@ func is_cell_solid(cell: Vector2i) -> bool:
   )
   return result.size() > 0
 
-func update():
+func update(_delta):
   pass

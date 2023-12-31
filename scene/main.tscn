@@ -1,41 +1,41 @@
-[gd_scene load_steps=19 format=3 uid="uid://bis7f6fr2cmmy"]
+[gd_scene load_steps=20 format=3 uid="uid://bis7f6fr2cmmy"]
 
 [ext_resource type="PackedScene" uid="uid://cs1qj5xwmyv0t" path="res://manager/fsm/fsm.tscn" id="1_4mas1"]
 [ext_resource type="Script" path="res://scene/main.gd" id="1_f8cl6"]
 [ext_resource type="PackedScene" uid="uid://dwjhnwek4vgvm" path="res://manager/input_handler/input_handler.tscn" id="3_cmksk"]
-[ext_resource type="TileSet" uid="uid://csda3s0cdiapx" path="res://resource/tile_set/grass_land_floor_tile_set.tres" id="4_r7101"]
 [ext_resource type="PackedScene" uid="uid://ctiedv5av3yed" path="res://manager/map_manager/map_generator/dungeon_generator/dungeon_generator.tscn" id="5_13jig"]
-[ext_resource type="Script" path="res://resource/map_data/dungeon_data/dungeon_data.gd" id="5_efryx"]
+[ext_resource type="Script" path="res://resource/map_data/dungeon_data/dungeon_data.gd" id="5_p422j"]
 [ext_resource type="PackedScene" uid="uid://dng7ewi2jr40h" path="res://manager/map_manager/map_manager.tscn" id="6_oskp0"]
+[ext_resource type="PackedScene" uid="uid://cdqkunjh5b1vg" path="res://manager/fog_painter/fog_painter.tscn" id="8_wpgdg"]
 [ext_resource type="PackedScene" uid="uid://bwm1xvbfms86d" path="res://manager/combat_manager/combat_manager.tscn" id="9_bewdx"]
-[ext_resource type="PackedScene" uid="uid://bggm1n2uuh8y5" path="res://entity/character/enemy/mushroom/mushroom.tscn" id="9_clr1f"]
+[ext_resource type="PackedScene" uid="uid://hffdl5k4hipv" path="res://entity/character/enemy/slime/slime.tscn" id="9_dkh4x"]
 [ext_resource type="PackedScene" uid="uid://2gnssm740kr8" path="res://manager/enemy_spawner/enemy_spawner.tscn" id="9_xi7ku"]
-[ext_resource type="PackedScene" uid="uid://bdolj5xl4vslx" path="res://entity/character/enemy/mole/mole.tscn" id="10_fxhcn"]
 [ext_resource type="PackedScene" uid="uid://cley4nbpeuhsm" path="res://manager/astar_grid_manager/astar_grid_manager.tscn" id="10_oi1ii"]
 [ext_resource type="PackedScene" uid="uid://b82nhmv7hkb8j" path="res://manager/astar_grid_manager/astar_grid_manager_debugger/astar_grid_manager_debugger.tscn" id="11_7ttd6"]
-[ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="12_l0occ"]
+[ext_resource type="TileSet" uid="uid://csda3s0cdiapx" path="res://resource/tile_set/fantasy_tile_set.tres" id="12_562ji"]
 [ext_resource type="PackedScene" uid="uid://dp6p8l7ft8osa" path="res://entity/character/player/player.tscn" id="13_dh451"]
+[ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="15_b8h64"]
 [ext_resource type="PackedScene" uid="uid://bqoatkkcp7n8o" path="res://ui/inventory_window/inventory_window.tscn" id="16_pfi7h"]
+[ext_resource type="PackedScene" uid="uid://bg86rbjuxefqc" path="res://ui/main_ui/main_ui.tscn" id="17_1lmkx"]
 
-[sub_resource type="Resource" id="Resource_t4ejh"]
+[sub_resource type="Resource" id="Resource_myq7y"]
 resource_local_to_scene = true
-script = ExtResource("5_efryx")
+script = ExtResource("5_p422j")
 room_base_size_limit = 5
-room_count = 3
-max_width = 40
-max_height = 40
-winding_percent = 80
-map_size = Vector2i(60, 40)
+room_count = 50
+max_width = 100
+max_height = 100
+connector_width_limit = [0, 1]
 cell_size = Vector2i(16, 16)
 
-[sub_resource type="Resource" id="Resource_fmi5s"]
+[sub_resource type="Resource" id="Resource_ocaq4"]
 resource_local_to_scene = true
-script = ExtResource("12_l0occ")
+script = ExtResource("15_b8h64")
 base_levelup_experience_threshold = 100
 levelup_experience_threshold_increament = 0.2
 base_attribute_points_gain_per_level = 5
 name = "Player"
-slight = 6
+sight = 6
 strength = 8
 constitution = 8
 agility = 8
@@ -63,18 +63,22 @@ unique_name_in_owner = true
 
 [node name="MapManager" parent="." instance=ExtResource("6_oskp0")]
 unique_name_in_owner = true
-map_data = SubResource("Resource_t4ejh")
+map_data = SubResource("Resource_myq7y")
 
 [node name="DungeonGenerator" parent="MapManager" instance=ExtResource("5_13jig")]
 
 [node name="AstarGridManager" parent="." instance=ExtResource("10_oi1ii")]
 unique_name_in_owner = true
 
+[node name="FogPainter" parent="." instance=ExtResource("8_wpgdg")]
+unique_name_in_owner = true
+
 [node name="EnemySpawner" parent="." instance=ExtResource("9_xi7ku")]
 unique_name_in_owner = true
+max_enemy = null
+boss_scene = null
 enemy_scene = {
-ExtResource("10_fxhcn"): 1.0,
-ExtResource("9_clr1f"): 1.0
+ExtResource("9_dkh4x"): 100
 }
 
 [node name="AstarGridManagerDebugger" parent="." instance=ExtResource("11_7ttd6")]
@@ -85,9 +89,9 @@ unique_name_in_owner = true
 
 [node name="TileMap" type="TileMap" parent="."]
 unique_name_in_owner = true
-tile_set = ExtResource("4_r7101")
+tile_set = ExtResource("12_562ji")
 format = 2
-layer_0/name = "floor"
+layer_0/name = "Default"
 layer_1/name = "Fog"
 layer_1/z_index = 1000
 layer_1/tile_data = PackedInt32Array()
@@ -100,10 +104,14 @@ unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("13_dh451")]
 unique_name_in_owner = true
-character_data = SubResource("Resource_fmi5s")
+character_data = SubResource("Resource_ocaq4")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
+[node name="MainUi" parent="." instance=ExtResource("17_1lmkx")]
+unique_name_in_owner = true
+
 [node name="InventoryWindow" parent="." instance=ExtResource("16_pfi7h")]
 unique_name_in_owner = true
+layer = 10
 visible = false

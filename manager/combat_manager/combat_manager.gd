@@ -8,7 +8,7 @@ var _combat_list: Array[Dictionary] = []
 func initialize():
   pass
 
-func update():
+func update(_delta):
   _handle_combat_list()
 
 func add_to_combat(attacker: Character, victim: Character):

@@ -1,19 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy0x7ku3bnmtj"]
+[gd_scene load_steps=5 format=3 uid="uid://dy0x7ku3bnmtj"]
 
 [ext_resource type="PackedScene" uid="uid://dw8alcjhbtiqx" path="res://entity/character/character.tscn" id="1_dodak"]
 [ext_resource type="Script" path="res://entity/character/enemy/enemy.gd" id="2_5gawy"]
 [ext_resource type="PackedScene" uid="uid://casujnv1b1io4" path="res://component/ai_component/ai/chase_ai/chase_ai.tscn" id="4_koesa"]
 [ext_resource type="PackedScene" uid="uid://b2fgoexfswjit" path="res://component/ai_component/ai_component.tscn" id="5_w5me3"]
-[ext_resource type="PackedScene" uid="uid://b1np3feeus5dg" path="res://component/ai_component/ai/walk_around_ai/walk_around_ai.tscn" id="6_sfk8t"]
 
 [node name="Enemy" instance=ExtResource("1_dodak")]
 script = ExtResource("2_5gawy")
 
-[node name="Sprite" parent="." index="0"]
-vframes = 4
-
 [node name="AiComponent" parent="." index="2" instance=ExtResource("5_w5me3")]
 
 [node name="ChaseAi" parent="AiComponent" index="0" instance=ExtResource("4_koesa")]
-
-[node name="WalkAroundAi" parent="AiComponent" index="1" instance=ExtResource("6_sfk8t")]

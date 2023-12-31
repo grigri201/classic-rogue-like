@@ -17,12 +17,19 @@ func initialize():
 
 func execute() -> bool:
   var distanceToPlayer = _enemy.get_distance_to((Vector2i(_player.global_position) - _map_data.cell_size / 2) / _map_data.cell_size)
-  if (distanceToPlayer <= _enemy.character_data.slight):
+  if (distanceToPlayer <= _enemy.character_data.sight):
     return false
   _astar_grid_manager.astar_grid.set_point_solid(
     _map_manager.position_to_cell_id(_enemy.global_position),
     false
   )
-  var direction = Vector2i(randi_range(-1, 1), randi_range(-1, 1))
+  var direction: Vector2i
+  var movement_horizontal = randi_range(-1, 1)
+  # limit movment in 4 direction
+  if movement_horizontal != 0:
+    direction = Vector2i(movement_horizontal, 0)
+  else:
+    var movement_vertical = randi_range(-1, 1)
+    direction = Vector2i(0, movement_vertical)
   executed.emit(direction)
   return true

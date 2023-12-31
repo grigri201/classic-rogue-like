@@ -17,7 +17,7 @@ func initialize():
 
   _input_handler.toggle_inventory_window_input.connect(toggle)
 
-func update():
+func update(_delta):
   pass
 
 func use_inventory_object():

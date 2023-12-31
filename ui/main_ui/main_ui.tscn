@@ -1,0 +1,227 @@
+[gd_scene load_steps=19 format=3 uid="uid://bg86rbjuxefqc"]
+
+[ext_resource type="Script" path="res://ui/main_ui/main_ui.gd" id="1_7fyeo"]
+[ext_resource type="Texture2D" uid="uid://rq3pgm4l8syn" path="res://asset/texture/avatar/Faceset.png" id="1_p40nd"]
+[ext_resource type="Texture2D" uid="uid://d0m1j0fnpndq8" path="res://asset/texture/hub/LifeBarMiniUnder.png" id="2_jpsa3"]
+[ext_resource type="Texture2D" uid="uid://x2s5hc5kjw8x" path="res://asset/texture/hub/LifeBarMiniProgress.png" id="3_si8yt"]
+[ext_resource type="Texture2D" uid="uid://c572hhmf42bep" path="res://ui/texture/keyboard/w.tres" id="4_sdvnh"]
+[ext_resource type="Texture2D" uid="uid://c44ajskcw2v01" path="res://ui/texture/keyboard/a.tres" id="4_tnpyx"]
+[ext_resource type="Texture2D" uid="uid://hgmrst0xb3yw" path="res://ui/texture/icon/melee_icon.tres" id="4_y7g50"]
+[ext_resource type="Texture2D" uid="uid://dm62aad1k8bdc" path="res://ui/texture/icon/sight_icon.tres" id="5_tm87u"]
+[ext_resource type="Texture2D" uid="uid://bhmmyyw34a2t7" path="res://ui/texture/icon/defense_icon.tres" id="6_8xu2g"]
+[ext_resource type="Texture2D" uid="uid://cfoq2xqk3yhew" path="res://ui/texture/keyboard/s.tres" id="6_v1ybd"]
+[ext_resource type="Texture2D" uid="uid://b7mp2y83dccfq" path="res://ui/texture/keyboard/d.tres" id="7_5x1ir"]
+[ext_resource type="Texture2D" uid="uid://di1xvujonr8jx" path="res://ui/texture/keyboard/x.tres" id="8_7ob6s"]
+[ext_resource type="FontFile" uid="uid://dydeib0j2gibn" path="res://asset/font/NormalFont.ttf" id="8_ewqjx"]
+[ext_resource type="Texture2D" uid="uid://blwifx84whkb2" path="res://ui/texture/keyboard/i.tres" id="10_3s72k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb2t6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1x7n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lux7o"]
+font = ExtResource("8_ewqjx")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_1h7fq"]
+font = ExtResource("8_ewqjx")
+font_size = 12
+
+[node name="MainUi" type="CanvasLayer"]
+script = ExtResource("1_7fyeo")
+
+[node name="TopContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="UserStatePanel" type="PanelContainer" parent="TopContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rb2t6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopContainer/UserStatePanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="TopContainer/UserStatePanel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_p40nd")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopContainer/UserStatePanel/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="HPProgressBarContainer" type="MarginContainer" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HPBar" type="TextureProgressBar" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer/HPProgressBarContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+value = 20.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("2_jpsa3")
+texture_progress = ExtResource("3_si8yt")
+
+[node name="States" type="MarginContainer" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer/States"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer/States/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_y7g50")
+expand_mode = 3
+
+[node name="AttackLabel" type="Label" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer/States/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "0
+"
+
+[node name="TextureRect2" type="TextureRect" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer/States/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_8xu2g")
+expand_mode = 3
+
+[node name="DefenseLabel" type="Label" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer/States/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "0
+"
+
+[node name="TextureRect3" type="TextureRect" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer/States/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_tm87u")
+expand_mode = 3
+
+[node name="SightLabel" type="Label" parent="TopContainer/UserStatePanel/HBoxContainer/VBoxContainer/States/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "0
+"
+
+[node name="BottomContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ControlPanel" type="PanelContainer" parent="BottomContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p1x7n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomContainer/ControlPanel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BottomContainer/ControlPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+columns = 3
+
+[node name="empty1" type="TextureRect" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="UP" type="TextureRect" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_sdvnh")
+stretch_mode = 1
+
+[node name="empty2" type="TextureRect" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="LEFT" type="TextureRect" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_tnpyx")
+stretch_mode = 1
+
+[node name="DOWN" type="TextureRect" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("6_v1ybd")
+stretch_mode = 1
+
+[node name="RIGHT" type="TextureRect" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("7_5x1ir")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Move"
+label_settings = SubResource("LabelSettings_lux7o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BottomContainer/ControlPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer2/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("8_7ob6s")
+
+[node name="Label" type="Label" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Skip Round"
+label_settings = SubResource("LabelSettings_1h7fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="BottomContainer/ControlPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer3/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("10_3s72k")
+
+[node name="Label" type="Label" parent="BottomContainer/ControlPanel/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Item"
+label_settings = SubResource("LabelSettings_1h7fq")
+horizontal_alignment = 1
+vertical_alignment = 1

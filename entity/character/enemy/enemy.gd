@@ -4,8 +4,11 @@ class_name Enemy
 var _late_update_components: Array[LateUpdateComponent] = []
 var _astar_grid_manager: AstarGridManager
 
+var _skill_ai: SkillAI
+
 func initialize():
   super.initialize()
+  _skill_ai = get_node("AiComponent/SkillAi")
   _astar_grid_manager = get_tree().current_scene.get_node("%AstarGridManager")
   map_manager.initialized.connect(_on_map_initialized)
   var nodes = get_children()
@@ -13,10 +16,16 @@ func initialize():
     if node is LateUpdateComponent:
       node.initialize()
       _late_update_components.append(node)
+  if _skill_ai:
+    _skill_ai.skill_used.connect(_on_skill_used)
+
+func set_cell(target_cell: Vector2i):
+  cell = target_cell
+  global_position = map_manager.cell_id_to_global_position(target_cell)
 
 func _on_map_initialized():
-  var enemy_spawn_cell = map_manager.random_cell_in_rooms()
-  global_position = map_manager.cell_id_to_global_position(enemy_spawn_cell)
+  var target_cell = map_manager.random_cell_in_rooms()
+  set_cell(target_cell)
 
 func _on_character_dead(character: Character):
   if character == self and !character.is_dead:
@@ -27,3 +36,5 @@ func _on_character_dead(character: Character):
     queue_free()
     is_dead = true
   
+func _on_skill_used():
+  pass

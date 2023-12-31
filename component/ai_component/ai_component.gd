@@ -9,7 +9,7 @@ func initialize():
       ai_node.initialize()
       _ai_list.append(ai_node)
 
-func update():
+func update(_delta):
   for ai_node in _ai_list:
     var is_executed = ai_node.execute()
     if (is_executed):

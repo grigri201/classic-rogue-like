@@ -6,5 +6,5 @@ signal next_state
 func initialize():
     assert(false, "this method must be overriden")
 
-func update():
+func update(_delta):
     assert(false, "this method must be overriden")

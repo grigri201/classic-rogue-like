@@ -5,7 +5,7 @@ var _pickable_object_container;
 func initialize():
   _pickable_object_container = get_tree().current_scene.get_node("%PickableObjectContainer")
 
-func update():
+func update(_delta):
   pass
     
 func try_drop_pickable_object():
@@ -21,6 +21,6 @@ func try_drop_pickable_object():
     drop.initialize()
     break
 
-func late_update():
+func late_update(_delta):
   try_drop_pickable_object()
     

@@ -6,7 +6,7 @@ signal selected(inventory_object: InventoryObject)
 func initialize():
   focus_entered.connect(_on_focus_entered)
 
-func update():
+func update(_delta):
   pass
 
 func _on_focus_entered():

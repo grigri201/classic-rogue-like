@@ -16,7 +16,7 @@ func initialize():
 
 func execute() -> bool:
   var distanceToPlayer = _enemy.get_distance_to((Vector2i(_player.global_position) - _map_data.cell_size / 2) / _map_data.cell_size)
-  if distanceToPlayer > _enemy.character_data.slight:
+  if distanceToPlayer > _enemy.character_data.sight:
     return false
   _combat_manager.add_to_combat(_enemy, _player)
   show_range_attack_line(_enemy.global_position, _player.global_position)
