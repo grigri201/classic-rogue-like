@@ -1,7 +1,7 @@
 extends Equipment
 
-@export var _min_attack_increament = 3;
-@export var _max_attack_increament = 20;
+@export var _min_attack_increament = 1;
+@export var _max_attack_increament = 2;
 
 var _final_attack_increament;
 

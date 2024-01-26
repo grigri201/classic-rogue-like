@@ -6,8 +6,8 @@ signal toggle_inventory_window_input()
 signal skip_round_input()
 
 var _interrupt_movement_timer: Timer
-var _max_interrupt_time: float = 0.4
-var _min_interrupt_time: float = 0.2
+var _max_interrupt_time: float = 0.3
+var _min_interrupt_time: float = 0.1
 var _current_duration: float
 var _player: Node2D
 var _map_manager: MapManager

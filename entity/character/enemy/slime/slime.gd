@@ -24,6 +24,7 @@ func get_valid_cell():
       return target_cell
   return Vector2i.ZERO
   
-func _split_slime(target_cell: Vector2i):
-  print(cell, " try to split slime to: ", target_cell)
-  _enemy_spawner.spawn_enemy(_slime_resource, target_cell)
+func _split_slime(_target_cell: Vector2i):
+  pass
+  # print(cell, " try to split slime to: ", target_cell)
+  # _enemy_spawner.spawn_enemy(_slime_resource, target_cell)

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctec5wpb3h2q1"]
+
+[ext_resource type="FontFile" uid="uid://dydeib0j2gibn" path="res://asset/font/NormalFont.ttf" id="1_tmqnf"]
+[ext_resource type="Script" path="res://ui/inventory_window/inventory_item/inventory_slot.gd" id="2_iroic"]
+[ext_resource type="Texture2D" uid="uid://b82vmixiq5hy0" path="res://ui/texture/inventory/default_item.tres" id="3_0l7ur"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qq4s"]
+bg_color = Color(0.6, 0.6, 0.6, 0.509804)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_021x1"]
+
+[node name="InventorySlot" type="Button"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_tmqnf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1qq4s")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_021x1")
+script = ExtResource("2_iroic")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0l7ur")
+
+[node name="Quantity" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_tmqnf")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
+vertical_alignment = 2

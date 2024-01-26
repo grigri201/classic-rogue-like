@@ -5,8 +5,10 @@ var _map_data: MapData;
 var _tile_map: TileMap;
 var _player: Player;
 
+@export var id: int;
 @export var object_name: String;
 @export var description: String;
+@export var stack_size: int;
 
 func initialize():
   _map_data = get_tree().current_scene.get_node("%MapManager").map_data

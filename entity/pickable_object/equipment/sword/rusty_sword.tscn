@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3s34arh0joqo"]
+
+[ext_resource type="PackedScene" uid="uid://bubqvygp3vk5l" path="res://entity/pickable_object/equipment/equipment.tscn" id="1_1rcav"]
+[ext_resource type="Script" path="res://entity/pickable_object/equipment/sword/rusty_sword.gd" id="2_f6hrj"]
+[ext_resource type="Texture2D" uid="uid://b065xiysosxhr" path="res://ui/texture/inventory/rusty_sword.tres" id="3_3sarw"]
+
+[node name="RustySword" instance=ExtResource("1_1rcav")]
+script = ExtResource("2_f6hrj")
+_min_attack_increament = 1
+_max_attack_increament = 2
+object_name = "rusty_sword"
+stack_size = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_3sarw")

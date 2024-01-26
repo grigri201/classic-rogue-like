@@ -1,26 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqoatkkcp7n8o"]
+[gd_scene load_steps=6 format=3 uid="uid://bqoatkkcp7n8o"]
 
-[ext_resource type="FontFile" uid="uid://dydeib0j2gibn" path="res://asset/font/NormalFont.ttf" id="1_4p04r"]
 [ext_resource type="Script" path="res://ui/inventory_window/inventory_window.gd" id="1_omfx4"]
+[ext_resource type="Script" path="res://ui/inventory_window/add_random_item.gd" id="2_xfp45"]
+[ext_resource type="PackedScene" uid="uid://cwef6gmf0llul" path="res://entity/pickable_object/item/herbal_medicine/herbal_medicine.tscn" id="3_fyvng"]
+[ext_resource type="PackedScene" uid="uid://d3s34arh0joqo" path="res://entity/pickable_object/equipment/sword/rusty_sword.tscn" id="4_atlml"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxxa3"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 16
-border_width_top = 16
-border_width_right = 8
-border_width_bottom = 16
-border_color = Color(0.8, 0.8, 0.8, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adau4"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 8
-border_width_top = 16
-border_width_right = 16
-border_width_bottom = 16
-border_color = Color(0.8, 0.8, 0.8, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fufh0"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="InventoryWindow" type="CanvasLayer"]
 script = ExtResource("1_omfx4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -28,65 +27,73 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
-layout_mode = 2
-color = Color(0, 0, 0, 0.54902)
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 2
 
-[node name="LeftPanel" type="Panel" parent="MarginContainer/HBoxContainer"]
+[node name="EquipmentPanel" type="Panel" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_yxxa3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fufh0")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/LeftPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/EquipmentPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/LeftPanel/MarginContainer"]
-layout_mode = 2
-mouse_filter = 2
-follow_focus = true
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
+[node name="AddRandomItem" type="Button" parent="MarginContainer/HBoxContainer/EquipmentPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Add Random Item"
+script = ExtResource("2_xfp45")
+items = Array[PackedScene]([ExtResource("3_fyvng"), ExtResource("4_atlml")])
 
-[node name="InventoryContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LeftPanel/MarginContainer/ScrollContainer"]
-unique_name_in_owner = true
+[node name="InventoryPanel" type="Panel" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fufh0")
 
-[node name="RightPanel" type="Panel" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_adau4")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/RightPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/InventoryPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 12
 
-[node name="DescriptionLabel" type="Label" parent="MarginContainer/HBoxContainer/RightPanel/MarginContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(1, 1)
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/InventoryPanel/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("1_4p04r")
-autowrap_mode = 1
+horizontal_scroll_mode = 3
+
+[node name="InventoryContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/InventoryPanel/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 10
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/EquipmentPanel/AddRandomItem" to="MarginContainer/HBoxContainer/EquipmentPanel/AddRandomItem" method="_on_pressed"]

@@ -37,7 +37,8 @@ func update(_delta):
   # set new cell solid true if enemy
   try_set_enemy_cell_solid(true)
   move_to_target_position()
-  _animation_player.play("move")
+  if _animation_player.has_animation("move"):
+    _animation_player.play("move")
   _current_direction = Vector2.ZERO
 
 func move_to_target_position():
