@@ -10,11 +10,9 @@ func _ready():
   _player_data = _player.character_data
 
 func _on_pressed():
-  print("add random item pressed")
   var item = _random_item().instantiate()
-  # var amount = _random_amount()
-  _player_data.add_inventory_item(item, 1)
-  print(_player_data.inventory)
+  var amount = _random_amount()
+  _player_data.add_inventory_item(item.inventory_item_data, amount)
 
 func _random_item():
   return items[randi() % items.size()]

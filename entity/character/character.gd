@@ -17,20 +17,11 @@ func initialize():
     if node is Component:
       node.initialize()
       components.append(node)
-  initialize_combat_attribute()
   _combat_manager.character_dead.connect(_on_character_dead)
 
 func update(_delta):
   for component in components:
     component.update(_delta)
-
-func initialize_combat_attribute():
-  character_data.max_hp = character_data.constitution * character_data.constitution_increament_effects["health"]
-  character_data.hp = character_data.max_hp
-  character_data.attack = character_data.strength * character_data.strength_increament_effects["attack"]
-  character_data.defense = character_data.constitution * character_data.strength_increament_effects["defense"]
-  character_data.dodge = character_data.agility * character_data.agility_increament_effects["dodge"]
-  character_data.critical = character_data.agility * character_data.agility_increament_effects["critical"]
 
 func get_distance_to(target_cell: Vector2i)->int:
   var distanceX = abs(cell.x - target_cell.x)

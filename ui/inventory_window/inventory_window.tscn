@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqoatkkcp7n8o"]
+[gd_scene load_steps=5 format=3 uid="uid://bqoatkkcp7n8o"]
 
 [ext_resource type="Script" path="res://ui/inventory_window/inventory_window.gd" id="1_omfx4"]
 [ext_resource type="Script" path="res://ui/inventory_window/add_random_item.gd" id="2_xfp45"]
 [ext_resource type="PackedScene" uid="uid://cwef6gmf0llul" path="res://entity/pickable_object/item/herbal_medicine/herbal_medicine.tscn" id="3_fyvng"]
-[ext_resource type="PackedScene" uid="uid://d3s34arh0joqo" path="res://entity/pickable_object/equipment/sword/rusty_sword.tscn" id="4_atlml"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fufh0"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
@@ -64,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Add Random Item"
 script = ExtResource("2_xfp45")
-items = Array[PackedScene]([ExtResource("3_fyvng"), ExtResource("4_atlml")])
+items = Array[PackedScene]([ExtResource("3_fyvng")])
 
 [node name="InventoryPanel" type="Panel" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2

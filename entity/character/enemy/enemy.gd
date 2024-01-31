@@ -1,15 +1,22 @@
 extends Character
 class_name Enemy
 
+@export var id: String
+
 var _late_update_components: Array[LateUpdateComponent] = []
 var _astar_grid_manager: AstarGridManager
+var _sprite: Sprite2D
 
 var _skill_ai: SkillAI
 
 func initialize():
+  _sprite = get_node("Sprite")
+  _init_enemy()
   super.initialize()
   _skill_ai = get_node("AiComponent/SkillAi")
   _astar_grid_manager = get_tree().current_scene.get_node("%AstarGridManager")
+
+
   map_manager.initialized.connect(_on_map_initialized)
   var nodes = get_children()
   for node in nodes:
@@ -35,6 +42,13 @@ func _on_character_dead(character: Character):
     )
     queue_free()
     is_dead = true
+
+func _init_enemy():
+  # load enemy data from EnemyList
+  character_data = EnemyList.enmey_data(id)
+  # set sprite
+  _sprite.texture = load("res://asset/texture/enemy/"+character_data.key+".tres")
+
   
 func _on_skill_used():
   pass

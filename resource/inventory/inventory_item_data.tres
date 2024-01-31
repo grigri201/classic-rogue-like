@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=2 format=3 uid="uid://b7gbfpqaac65d"]
+
+[ext_resource type="Script" path="res://resource/inventory/inventory_item_data.gd" id="1_c8q6e"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_c8q6e")
+id = 0
+object_name = ""
+description = ""
+stack_size = 0
+strength_increament_effects = {
+"attack": 2,
+"defense": 1
+}
+constitution_increament_effects = {
+"health": 3,
+"max_health": 3
+}
+agility_increament_effects = {
+"critical": 0.01,
+"dodge": 0.01
+}

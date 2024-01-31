@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bis7f6fr2cmmy"]
+[gd_scene load_steps=23 format=3 uid="uid://bis7f6fr2cmmy"]
 
 [ext_resource type="PackedScene" uid="uid://cs1qj5xwmyv0t" path="res://manager/fsm/fsm.tscn" id="1_4mas1"]
 [ext_resource type="Script" path="res://scene/main.gd" id="1_f8cl6"]
@@ -12,13 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://2gnssm740kr8" path="res://manager/enemy_spawner/enemy_spawner.tscn" id="9_xi7ku"]
 [ext_resource type="PackedScene" uid="uid://cley4nbpeuhsm" path="res://manager/astar_grid_manager/astar_grid_manager.tscn" id="10_oi1ii"]
 [ext_resource type="PackedScene" uid="uid://b82nhmv7hkb8j" path="res://manager/astar_grid_manager/astar_grid_manager_debugger/astar_grid_manager_debugger.tscn" id="11_7ttd6"]
+[ext_resource type="PackedScene" uid="uid://bq7vymnrd5a1p" path="res://entity/character/enemy/carnivorous_plant/carnivorous_plant.tscn" id="11_43v8t"]
 [ext_resource type="TileSet" uid="uid://csda3s0cdiapx" path="res://resource/tile_set/fantasy_tile_set.tres" id="12_562ji"]
+[ext_resource type="PackedScene" uid="uid://dh0pcgr18k6d8" path="res://entity/character/enemy/gargoyle/gargoyle.tscn" id="12_ng2kp"]
 [ext_resource type="PackedScene" uid="uid://dp6p8l7ft8osa" path="res://entity/character/player/player.tscn" id="13_dh451"]
+[ext_resource type="PackedScene" uid="uid://dl40dmigtyjg0" path="res://entity/character/enemy/mimic/mimic.tscn" id="13_od2b7"]
 [ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="15_b8h64"]
 [ext_resource type="PackedScene" uid="uid://bqoatkkcp7n8o" path="res://ui/inventory_window/inventory_window.tscn" id="16_pfi7h"]
 [ext_resource type="PackedScene" uid="uid://bg86rbjuxefqc" path="res://ui/main_ui/main_ui.tscn" id="17_1lmkx"]
 
-[sub_resource type="Resource" id="Resource_85w5e"]
+[sub_resource type="Resource" id="Resource_wp3su"]
 resource_local_to_scene = true
 script = ExtResource("5_p422j")
 room_base_size_limit = 5
@@ -31,26 +34,20 @@ cell_size = Vector2i(16, 16)
 [sub_resource type="Resource" id="Resource_ocaq4"]
 resource_local_to_scene = true
 script = ExtResource("15_b8h64")
-base_levelup_experience_threshold = 100
-levelup_experience_threshold_increament = 0.2
-base_attribute_points_gain_per_level = 5
+base_levelup_experience_threshold = null
+levelup_experience_threshold_increament = null
+base_attribute_points_gain_per_level = null
+id = null
+key = null
 name = "Player"
 sight = 6
-strength = 8
-constitution = 8
-agility = 8
-strength_increament_effects = {
-"attack": 2,
-"defense": 1
-}
-constitution_increament_effects = {
-"health": 3,
-"max_health": 3
-}
-agility_increament_effects = {
-"critical": 0.01,
-"dodge": 0.01
-}
+speed = null
+hp = null
+max_hp = null
+attack = null
+defense = null
+dodge = null
+critical = null
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_f8cl6")
@@ -63,7 +60,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" parent="." instance=ExtResource("6_oskp0")]
 unique_name_in_owner = true
-map_data = SubResource("Resource_85w5e")
+map_data = SubResource("Resource_wp3su")
 
 [node name="DungeonGenerator" parent="MapManager" instance=ExtResource("5_13jig")]
 
@@ -78,7 +75,10 @@ unique_name_in_owner = true
 max_enemy = null
 boss_scene = null
 enemy_scene = {
-ExtResource("9_dkh4x"): 100
+ExtResource("9_dkh4x"): 100,
+ExtResource("11_43v8t"): 50,
+ExtResource("12_ng2kp"): 20,
+ExtResource("13_od2b7"): 30
 }
 
 [node name="AstarGridManagerDebugger" parent="." instance=ExtResource("11_7ttd6")]

@@ -13,7 +13,8 @@ func try_drop_pickable_object():
     return
   for object in owner.character_data.death_drop_pickable_objects.keys():
     var drop_probability = owner.character_data.death_drop_pickable_objects[object]
-    if (randf_range(0, 1) > drop_probability):
+    var random_num = randf_range(0, 1)
+    if (random_num > drop_probability):
       continue
     var drop = object.instantiate()
     _pickable_object_container.add_child(drop)

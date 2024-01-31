@@ -1,6 +1,8 @@
 extends Item
 class_name ImmediateEffectItem
 
+# 装在背包里就生效
+
 func initialize():
   super.initialize()
 

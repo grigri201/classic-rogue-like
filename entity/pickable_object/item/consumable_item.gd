@@ -1,6 +1,8 @@
 extends Item
 class_name ConsumableItem
 
+# 使用就生效
+
 func initialize():
   super.initialize()
 

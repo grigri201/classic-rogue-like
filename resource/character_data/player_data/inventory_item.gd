@@ -2,23 +2,29 @@ class_name InventoryItem
 
 var item_icon: Texture2D
 var quantity: int
-var pickable_object: PickableObject
+var inventory_item_data: InventoryItemData
 
-func initialize(object: PickableObject):
-  pickable_object = object
-  item_icon = load("res://ui/texture/inventory/"+object.object_name+".tres")
+static func from_item_data(item_data: InventoryItemData):
+  var item = InventoryItem.new()
+  item.initialize(item_data)
+  return item
+
+func initialize(item_data: InventoryItemData):
+  print(item_data)
+  inventory_item_data = item_data
+  item_icon = load("res://ui/texture/inventory/"+item_data.name+".tres")
   quantity = 0
 
 func try_add_quantity(amount: int):
   var finally_quantity = quantity + amount
-  if finally_quantity > pickable_object.stack_size:
-    quantity = pickable_object.stack_size
-    return amount - (finally_quantity - pickable_object.stack_size)
+  if finally_quantity > inventory_item_data.stack_size:
+    quantity = inventory_item_data.stack_size
+    return finally_quantity - inventory_item_data.stack_size
   quantity += amount
   return 0
 
 func is_reach_max_stack():
-  return quantity == pickable_object.stack_size
+  return quantity == inventory_item_data.stack_size
 
 func try_remove_quantity(amount: int):
   var finally_quantity = quantity - amount

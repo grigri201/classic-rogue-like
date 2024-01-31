@@ -6,9 +6,7 @@
 
 [node name="HerbalMedicine" instance=ExtResource("1_o8wgw")]
 script = ExtResource("2_uw6vm")
-health_increase = 10
-object_name = "herbal_medicine"
-stack_size = 10
+health_increase = 2
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_dnx2q")

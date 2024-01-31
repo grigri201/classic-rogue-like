@@ -90,7 +90,7 @@ func try_handle_pickup(direction: Vector2i):
   for element in result:
     var collider = element["collider"]
     if (collider.owner is PickableObject):
-      _player.character_data.inventory.append(collider.owner)
+      _player.character_data.add_inventory_item(collider.owner)
       collider.owner.visible = false
       _pickable_object_container.remove_child(collider.owner)
   return true

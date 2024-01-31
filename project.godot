@@ -16,6 +16,11 @@ run/main_scene="res://scene/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EnemyList="*res://auto_load/enemy.gd"
+LootTable="*res://auto_load/loot_table.gd"
+
 [display]
 
 window/size/viewport_width=640
@@ -27,6 +32,7 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
+"res://auto_load/": "red",
 "res://component/": "yellow",
 "res://entity/": "green",
 "res://manager/": "teal",

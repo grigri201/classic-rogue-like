@@ -10,18 +10,10 @@ levelup_experience_threshold_increament = 0.2
 base_attribute_points_gain_per_level = 5
 name = "Player"
 sight = 6
-strength = 8
-constitution = 8
-agility = 8
-strength_increament_effects = {
-"attack": 2,
-"defense": 1
-}
-constitution_increament_effects = {
-"health": 3,
-"max_health": 3
-}
-agility_increament_effects = {
-"critical": 0.01,
-"dodge": 0.01
-}
+speed = 1.0
+hp = 50.0
+max_hp = 50.0
+attack = 10.0
+defense = 2.0
+dodge = 0.1
+critical = 0.1

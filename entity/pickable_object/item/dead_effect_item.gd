@@ -1,6 +1,8 @@
 extends Item
 class_name DeadEffectItem
 
+# 死亡的时候生效
+
 func initialize():
   super.initialize()
 
