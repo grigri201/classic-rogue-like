@@ -6,9 +6,6 @@ func _process(_delta):
     var character_data = player.character_data
     print("--------------------")
     print("name:", character_data.name)
-    print("strength", player.strength)
-    print("constitution:", character_data.constitution)
-    print("agility:", character_data.agility)
     print("current_hp:", character_data.hp)
     print("max_hp:", character_data.max_hp)
     print("attack:", character_data.attack)

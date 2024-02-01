@@ -39,6 +39,7 @@ func drop_inventory_item():
   var picked_object = _player_data.inventory[_selected_inventory_index]
   if picked_object is ImmediateEffectItem:
     picked_object.undo_immediate_effect()
+	# _player_data.inventory.remove_item(_selected_inventory_index)
   toggle()
 
 func refresh_inventory_slots():

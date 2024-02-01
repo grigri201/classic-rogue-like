@@ -5,9 +5,11 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_617jk")
-base_levelup_experience_threshold = 100
-levelup_experience_threshold_increament = 0.2
-base_attribute_points_gain_per_level = 5
+base_levelup_experience_threshold = null
+levelup_experience_threshold_increament = null
+base_attribute_points_gain_per_level = null
+id = null
+key = "Player"
 name = "Player"
 sight = 6
 speed = 1.0

@@ -7,20 +7,12 @@ func _ready():
   content = JSON.parse_string(file.get_as_text())
   file.close()
 
-func get_key(ID = "0"):
-  return content[ID]["texture"]
-
-func get_item_name(ID = "0"):
-  return content[ID]["name"]
-
-func get_description(ID = "0"):
-  return content[ID]["description"]
-
-func get_stack_size(ID = "0"):
-  return content[ID]["stack_size"]
-
-func get_health_increase(ID = "0"):
-  return content[ID]["health_increase"]
-
-func get_satiety_increase(ID = "0"):
-  return content[ID]["satiety_increase"]
+func item_data(ID = "0"):
+  var data = InventoryItemData.new()
+  data.id = ID
+  data.key = content[ID]["key"]
+  data.name = content[ID]["name"]
+  data.description = content[ID]["description"]
+  data.stack_size = content[ID]["stack_size"]
+  data.health_increase = content[ID]["health_increase"]
+  data.satiety_increase = content[ID]["satiety_increase"]

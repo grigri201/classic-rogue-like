@@ -17,11 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://dh0pcgr18k6d8" path="res://entity/character/enemy/gargoyle/gargoyle.tscn" id="12_ng2kp"]
 [ext_resource type="PackedScene" uid="uid://dp6p8l7ft8osa" path="res://entity/character/player/player.tscn" id="13_dh451"]
 [ext_resource type="PackedScene" uid="uid://dl40dmigtyjg0" path="res://entity/character/enemy/mimic/mimic.tscn" id="13_od2b7"]
-[ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="15_b8h64"]
 [ext_resource type="PackedScene" uid="uid://bqoatkkcp7n8o" path="res://ui/inventory_window/inventory_window.tscn" id="16_pfi7h"]
 [ext_resource type="PackedScene" uid="uid://bg86rbjuxefqc" path="res://ui/main_ui/main_ui.tscn" id="17_1lmkx"]
+[ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="18_dtxwp"]
 
-[sub_resource type="Resource" id="Resource_wp3su"]
+[sub_resource type="Resource" id="Resource_talnv"]
 resource_local_to_scene = true
 script = ExtResource("5_p422j")
 room_base_size_limit = 5
@@ -31,23 +31,23 @@ max_height = 100
 connector_width_limit = [0, 1]
 cell_size = Vector2i(16, 16)
 
-[sub_resource type="Resource" id="Resource_ocaq4"]
+[sub_resource type="Resource" id="Resource_p4h10"]
 resource_local_to_scene = true
-script = ExtResource("15_b8h64")
+script = ExtResource("18_dtxwp")
 base_levelup_experience_threshold = null
 levelup_experience_threshold_increament = null
 base_attribute_points_gain_per_level = null
 id = null
-key = null
+key = "Player"
 name = "Player"
 sight = 6
-speed = null
-hp = null
-max_hp = null
-attack = null
-defense = null
-dodge = null
-critical = null
+speed = 1.0
+hp = 50.0
+max_hp = 50.0
+attack = 10.0
+defense = 2.0
+dodge = 0.1
+critical = 0.1
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_f8cl6")
@@ -60,7 +60,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" parent="." instance=ExtResource("6_oskp0")]
 unique_name_in_owner = true
-map_data = SubResource("Resource_wp3su")
+map_data = SubResource("Resource_talnv")
 
 [node name="DungeonGenerator" parent="MapManager" instance=ExtResource("5_13jig")]
 
@@ -104,7 +104,7 @@ unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("13_dh451")]
 unique_name_in_owner = true
-character_data = SubResource("Resource_ocaq4")
+character_data = SubResource("Resource_p4h10")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
