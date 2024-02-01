@@ -10,7 +10,6 @@ static func from_item_data(item_data: InventoryItemData):
   return item
 
 func initialize(item_data: InventoryItemData):
-  print(item_data)
   inventory_item_data = item_data
   item_icon = load("res://ui/texture/inventory/"+item_data.name+".tres")
   quantity = 0

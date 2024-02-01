@@ -17,13 +17,12 @@ func try_drop_pickable_object():
     if (random_num > drop_probability):
       continue
     var item_data = LootTable.item_data(item_id)
-    var pickable_object = PickableObject.new()
-    pickable_object.inventory_item_data = item_data
-    print("Dropping item: " + item_data.key)
-    print("pickable_object:", pickable_object.inventory_item_data.key)
-    _pickable_object_container.add_child(pickable_object)
-    pickable_object.global_position = owner.global_position
-    pickable_object.initialize()
+    var pickable_object = load("res://entity/pickable_object/item/"+item_data.key+"/"+item_data.key+".tscn")
+    var drop = pickable_object.instantiate()
+    drop.inventory_item_data = item_data
+    _pickable_object_container.add_child(drop)
+    drop.global_position = owner.global_position
+    drop.initialize()
     break
 
 func late_update(_delta):

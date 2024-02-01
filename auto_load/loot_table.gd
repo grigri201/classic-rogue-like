@@ -16,3 +16,4 @@ func item_data(ID = "0"):
   data.stack_size = content[ID]["stack_size"]
   data.health_increase = content[ID]["health_increase"]
   data.satiety_increase = content[ID]["satiety_increase"]
+  return data
