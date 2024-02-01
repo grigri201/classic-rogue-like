@@ -11,7 +11,7 @@ static func from_item_data(item_data: InventoryItemData):
 
 func initialize(item_data: InventoryItemData):
   inventory_item_data = item_data
-  item_icon = load("res://ui/texture/inventory/"+item_data.name+".tres")
+  item_icon = load("res://ui/texture/inventory/"+item_data.key+".tres")
   quantity = 0
 
 func try_add_quantity(amount: int):

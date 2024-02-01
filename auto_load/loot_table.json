@@ -1,164 +1,164 @@
 {
-  "10001": {
-	"key": "herbal_medicine",
-	"name": "Herbal Medicine",
-	"description": "placeholder",
-	"stack_size": 10,
-	"health_increase": 2,
-	"satiety_increase": 1,
-	"chinese": "草药"
-  },
-  "10002": {
-	"key": "gelatin",
-	"name": "Gelatin",
-	"description": "placeholder",
-	"stack_size": 5,
-	"health_increase": 2,
-	"satiety_increase": 1,
-	"chinese": "明胶"
-  },
-  "10003": {
-	"key": "slime_acid",
-	"name": "Slime Acid",
-	"description": "placeholder",
-	"stack_size": 5,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "史莱姆酸液"
-  },
-  "10004": {
-	"key": "slime_crust",
-	"name": "Slime Crust",
-	"description": "placeholder",
-	"stack_size": 50,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "史莱姆外壳"
-  },
-  "10005": {
-	"key": "magic_crystal",
-	"name": "Magic Crystal",
-	"description": "placeholder",
-	"stack_size": 10,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "魔力结晶"
-  },
-  "10006": {
-	"key": "carnivorous_plant_fruit",
-	"name": "Carnivorous Plant Fruit",
-	"description": "placeholder",
-	"stack_size": 5,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "食肉植物的果实"
-  },
-  "10007": {
-	"key": "carnivorous_plant_vine",
-	"name": "Carnivorous Plant Vine",
-	"description": "placeholder",
-	"stack_size": 10,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "食肉植物的藤曼"
-  },
-  "10008": {
-	"key": "carnivorous_plant_seed",
-	"name": "Carnivorous Plant Seed",
-	"description": "placeholder",
-	"stack_size": 20,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "食肉植物的种子"
-  },
-  "10009": {
-	"key": "carnivorous_plant_nectar",
-	"name": "Carnivorous Plant Nectar",
-	"description": "placeholder",
-	"stack_size": 1,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "食肉植物的密"
-  },
-  "10010": {
-	"key": "carnivorous_plant_glue",
-	"name": "Carnivorous Plant Glue",
-	"description": "placeholder",
-	"stack_size": 5,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "食肉植物的胶"
-  },
-  "10011": {
-	"key": "paralytic_toxin",
-	"name": "Paralytic Toxin",
-	"description": "placeholder",
-	"stack_size": 5,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "麻痹毒液"
-  },
-  "10012": {
-	"key": "gargoyle_wings",
-	"name": "Gargoyle Wings",
-	"description": "placeholder",
-	"stack_size": 4,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "石像鬼翅膀"
-  },
-  "10013": {
-	"key": "gargoyles_eye",
-	"name": "Gargoyle's Eye",
-	"description": "placeholder",
-	"stack_size": 10,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "石像鬼的眼球"
-  },
-  "10014": {
-	"key": "stone_fragments",
-	"name": "Stone Fragments",
-	"description": "placeholder",
-	"stack_size": 20,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "石头碎片"
-  },
-  "10015": {
-	"key": "giant_hermit_crab_shell",
-	"name": "Giant Hermit Crab Shell",
-	"description": "placeholder",
-	"stack_size": 5,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "宝箱怪的壳"
-  },
-  "10016": {
-	"key": "giant_hermit_crab_claw",
-	"name": "Giant Hermit Crab Claw",
-	"description": "placeholder",
-	"stack_size": 2,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "宝箱怪的爪"
-  },
-  "10017": {
-	"key": "potion",
-	"name": "Potion",
-	"description": "placeholder",
-	"stack_size": 5,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "药水"
-  },
-  "10018": {
-	"key": "gold_coin",
-	"name": "Gold Coin",
-	"description": "placeholder",
-	"stack_size": 100,
-	"health_increase": null,
-	"satiety_increase": null,
-	"chinese": "金币"
-  }
+	"10001": {
+		"key": "herbal_medicine",
+		"name": "Herbal Medicine",
+		"description": "placeholder",
+		"stack_size": 10,
+		"health_increase": 2,
+		"satiety_increase": 1,
+		"chinese": "草药"
+	},
+	"10002": {
+		"key": "gelatin",
+		"name": "Gelatin",
+		"description": "placeholder",
+		"stack_size": 5,
+		"health_increase": 2,
+		"satiety_increase": 1,
+		"chinese": "明胶"
+	},
+	"10003": {
+		"key": "slime_acid",
+		"name": "Slime Acid",
+		"description": "placeholder",
+		"stack_size": 5,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "史莱姆酸液"
+	},
+	"10004": {
+		"key": "slime_crust",
+		"name": "Slime Crust",
+		"description": "placeholder",
+		"stack_size": 50,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "史莱姆外壳"
+	},
+	"10005": {
+		"key": "magic_crystal",
+		"name": "Magic Crystal",
+		"description": "placeholder",
+		"stack_size": 10,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "魔力结晶"
+	},
+	"10006": {
+		"key": "carnivorous_plant_fruit",
+		"name": "Carnivorous Plant Fruit",
+		"description": "placeholder",
+		"stack_size": 5,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "食肉植物的果实"
+	},
+	"10007": {
+		"key": "carnivorous_plant_vine",
+		"name": "Carnivorous Plant Vine",
+		"description": "placeholder",
+		"stack_size": 10,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "食肉植物的藤曼"
+	},
+	"10008": {
+		"key": "carnivorous_plant_seed",
+		"name": "Carnivorous Plant Seed",
+		"description": "placeholder",
+		"stack_size": 20,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "食肉植物的种子"
+	},
+	"10009": {
+		"key": "carnivorous_plant_nectar",
+		"name": "Carnivorous Plant Nectar",
+		"description": "placeholder",
+		"stack_size": 1,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "食肉植物的密"
+	},
+	"10010": {
+		"key": "carnivorous_plant_glue",
+		"name": "Carnivorous Plant Glue",
+		"description": "placeholder",
+		"stack_size": 5,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "食肉植物的胶"
+	},
+	"10011": {
+		"key": "paralytic_toxin",
+		"name": "Paralytic Toxin",
+		"description": "placeholder",
+		"stack_size": 5,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "麻痹毒液"
+	},
+	"10012": {
+		"key": "gargoyle_wings",
+		"name": "Gargoyle Wings",
+		"description": "placeholder",
+		"stack_size": 4,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "石像鬼翅膀"
+	},
+	"10013": {
+		"key": "gargoyles_eye",
+		"name": "Gargoyle's Eye",
+		"description": "placeholder",
+		"stack_size": 10,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "石像鬼的眼球"
+	},
+	"10014": {
+		"key": "stone_fragments",
+		"name": "Stone Fragments",
+		"description": "placeholder",
+		"stack_size": 20,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "石头碎片"
+	},
+	"10015": {
+		"key": "giant_hermit_crab_shell",
+		"name": "Giant Hermit Crab Shell",
+		"description": "placeholder",
+		"stack_size": 5,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "宝箱怪的壳"
+	},
+	"10016": {
+		"key": "giant_hermit_crab_claw",
+		"name": "Giant Hermit Crab Claw",
+		"description": "placeholder",
+		"stack_size": 2,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "宝箱怪的爪"
+	},
+	"10017": {
+		"key": "potion",
+		"name": "Potion",
+		"description": "placeholder",
+		"stack_size": 5,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "药水"
+	},
+	"10018": {
+		"key": "gold_coin",
+		"name": "Gold Coin",
+		"description": "placeholder",
+		"stack_size": 100,
+		"health_increase": 0,
+		"satiety_increase": 0,
+		"chinese": "金币"
+	}
 }

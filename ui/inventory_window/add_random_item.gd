@@ -10,12 +10,9 @@ func _ready():
   _player_data = _player.character_data
 
 func _on_pressed():
-  var item = _random_item().instantiate()
+  var item_data = LootTable.item_data("10001")
   var amount = _random_amount()
-  _player_data.add_inventory_item(item.inventory_item_data, amount)
-
-func _random_item():
-  return items[randi() % items.size()]
+  _player_data.add_inventory_item(item_data, amount)
 
 func _random_amount():
   return randi() % 10 + 1
