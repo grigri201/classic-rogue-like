@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp6p8l7ft8osa"]
+[gd_scene load_steps=7 format=3 uid="uid://dp6p8l7ft8osa"]
 
 [ext_resource type="PackedScene" uid="uid://dw8alcjhbtiqx" path="res://entity/character/character.tscn" id="1_n1tuu"]
 [ext_resource type="Resource" uid="uid://ckir1rvsd2ab" path="res://resource/character_data/player_data/player_data.tres" id="2_4ea0i"]
 [ext_resource type="Script" path="res://entity/character/player/player.gd" id="2_hjkvl"]
 [ext_resource type="Script" path="res://entity/character/player/player_debugger.gd" id="3_x4ysv"]
 [ext_resource type="Texture2D" uid="uid://ba1eqmh6y81rx" path="res://asset/texture/the_roguelike.png" id="5_rug1w"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4lnny"]
 
 [node name="Player" instance=ExtResource("1_n1tuu")]
 script = ExtResource("2_hjkvl")
@@ -17,3 +19,9 @@ script = ExtResource("3_x4ysv")
 texture = ExtResource("5_rug1w")
 region_enabled = true
 region_rect = Rect2(80, 560, 16, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="5"]
+tree_root = SubResource("AnimationNodeAnimation_4lnny")
+anim_player = NodePath("../AnimationPlayer")

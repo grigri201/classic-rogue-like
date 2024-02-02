@@ -55,7 +55,8 @@ func _get_damage(attacker: Character, victim: Character, is_critical: bool):
   return damage
 
 func _handle_victim_damage(victim: Character, damage: int):
-  victim.character_data.hp -= damage
+  if victim is Enemy:
+    victim.been_hit(damage)
 
 func _check_deaths():
   for combat in _combat_list:

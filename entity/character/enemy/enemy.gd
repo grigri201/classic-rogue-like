@@ -6,6 +6,7 @@ class_name Enemy
 var _late_update_components: Array[LateUpdateComponent] = []
 var _astar_grid_manager: AstarGridManager
 var _sprite: Sprite2D
+var _animation_player: AnimationPlayer
 
 var _skill_ai: SkillAI
 
@@ -15,7 +16,7 @@ func initialize():
   super.initialize()
   _skill_ai = get_node("AiComponent/SkillAi")
   _astar_grid_manager = get_tree().current_scene.get_node("%AstarGridManager")
-
+  _animation_player = get_node("AnimationPlayer")
 
   map_manager.initialized.connect(_on_map_initialized)
   var nodes = get_children()
@@ -33,6 +34,11 @@ func set_cell(target_cell: Vector2i):
 func _on_map_initialized():
   var target_cell = map_manager.random_cell_in_rooms()
   set_cell(target_cell)
+
+func been_hit(damage: int):
+  print("enemy been hit:", damage)
+  character_data.hp -= damage
+  _animation_player.play("been_hit")
 
 func _on_character_dead(character: Character):
   if character == self and !character.is_dead:

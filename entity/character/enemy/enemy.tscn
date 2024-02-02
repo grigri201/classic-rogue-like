@@ -1,14 +1,74 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy0x7ku3bnmtj"]
+[gd_scene load_steps=10 format=3 uid="uid://dy0x7ku3bnmtj"]
 
 [ext_resource type="PackedScene" uid="uid://dw8alcjhbtiqx" path="res://entity/character/character.tscn" id="1_dodak"]
 [ext_resource type="Script" path="res://entity/character/enemy/enemy.gd" id="2_5gawy"]
 [ext_resource type="PackedScene" uid="uid://casujnv1b1io4" path="res://component/ai_component/ai/chase_ai/chase_ai.tscn" id="4_koesa"]
 [ext_resource type="PackedScene" uid="uid://b2fgoexfswjit" path="res://component/ai_component/ai_component.tscn" id="5_w5me3"]
 
+[sub_resource type="Curve" id="Curve_h8mv6"]
+_data = [Vector2(0, 0.20057), 0.0, 0.0, 0, 0, Vector2(0.506425, 0.829576), 0.0, 0.0, 0, 0, Vector2(1, 0.164344), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Animation" id="Animation_luadh"]
+resource_name = "been_hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:default_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_10l7u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:default_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ooavl"]
+_data = {
+"RESET": SubResource("Animation_10l7u"),
+"been_hit": SubResource("Animation_luadh")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nvr3c"]
+
 [node name="Enemy" instance=ExtResource("1_dodak")]
 script = ExtResource("2_5gawy")
-id = null
 
 [node name="AiComponent" parent="." index="2" instance=ExtResource("5_w5me3")]
 
 [node name="ChaseAi" parent="AiComponent" index="0" instance=ExtResource("4_koesa")]
+
+[node name="Line2D" type="Line2D" parent="." index="4"]
+points = PackedVector2Array(-5, -7, -1, 1, 5, 8)
+width = 2.0
+width_curve = SubResource("Curve_h8mv6")
+default_color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_ooavl")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_ooavl")
+}
+tree_root = SubResource("AnimationNodeAnimation_nvr3c")
+anim_player = NodePath("../AnimationPlayer")
