@@ -19,9 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://dl40dmigtyjg0" path="res://entity/character/enemy/mimic/mimic.tscn" id="13_od2b7"]
 [ext_resource type="PackedScene" uid="uid://bqoatkkcp7n8o" path="res://ui/inventory_window/inventory_window.tscn" id="16_pfi7h"]
 [ext_resource type="PackedScene" uid="uid://bg86rbjuxefqc" path="res://ui/main_ui/main_ui.tscn" id="17_1lmkx"]
-[ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="18_dtxwp"]
+[ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="18_8jxxs"]
 
-[sub_resource type="Resource" id="Resource_mo71m"]
+[sub_resource type="Resource" id="Resource_pamjx"]
 resource_local_to_scene = true
 script = ExtResource("5_p422j")
 room_base_size_limit = 5
@@ -31,9 +31,9 @@ max_height = 100
 connector_width_limit = [0, 1]
 cell_size = Vector2i(16, 16)
 
-[sub_resource type="Resource" id="Resource_p4h10"]
+[sub_resource type="Resource" id="Resource_08x1y"]
 resource_local_to_scene = true
-script = ExtResource("18_dtxwp")
+script = ExtResource("18_8jxxs")
 base_levelup_experience_threshold = null
 levelup_experience_threshold_increament = null
 base_attribute_points_gain_per_level = null
@@ -45,7 +45,7 @@ speed = 1.0
 hp = 50.0
 max_hp = 50.0
 attack = 10.0
-defense = 2.0
+defense = 1.0
 dodge = 0.1
 critical = 0.1
 
@@ -60,7 +60,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" parent="." instance=ExtResource("6_oskp0")]
 unique_name_in_owner = true
-map_data = SubResource("Resource_mo71m")
+map_data = SubResource("Resource_pamjx")
 
 [node name="DungeonGenerator" parent="MapManager" instance=ExtResource("5_13jig")]
 
@@ -104,7 +104,7 @@ unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("13_dh451")]
 unique_name_in_owner = true
-character_data = SubResource("Resource_p4h10")
+character_data = SubResource("Resource_08x1y")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 

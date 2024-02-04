@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bya1hing7g6hy"]
+
+[ext_resource type="PackedScene" uid="uid://70ubkmhktb56" path="res://entity/pickable_object/item/item.tscn" id="1_bbqr6"]
+[ext_resource type="Script" path="res://entity/pickable_object/item/slime_crust/slime_crust.gd" id="2_ax1v0"]
+
+[node name="SlimeCrust" instance=ExtResource("1_bbqr6")]
+script = ExtResource("2_ax1v0")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0olebhmrhteo"]
+
+[ext_resource type="PackedScene" uid="uid://70ubkmhktb56" path="res://entity/pickable_object/item/item.tscn" id="1_ynidn"]
+[ext_resource type="Script" path="res://entity/pickable_object/item/gelatin/gelatin.gd" id="2_x2gko"]
+
+[node name="Gelatin" instance=ExtResource("1_ynidn")]
+script = ExtResource("2_x2gko")

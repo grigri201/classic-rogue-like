@@ -20,7 +20,7 @@ func execute() -> bool:
   if (distanceToPlayer > _enemy.character_data.sight or distanceToPlayer <= 1):
     return false
   var path_cells = _astar_grid_manager.astar_grid.get_id_path(_enemy.cell, _player.cell)
-  if path_cells.size() < 2:
+  if path_cells.size() < 1:
     return false
   var direction = path_cells[1] - _enemy.cell
   executed.emit(direction)

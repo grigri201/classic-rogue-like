@@ -16,6 +16,7 @@ func add_to_combat(attacker: Character, victim: Character):
     "attacker": attacker,
     "victim": victim
   }
+  print("add to combat list:", combat.attacker, combat.victim)
   _combat_list.append(combat)
 
 func _handle_combat_list():
@@ -57,6 +58,9 @@ func _get_damage(attacker: Character, victim: Character, is_critical: bool):
 func _handle_victim_damage(victim: Character, damage: int):
   if victim is Enemy:
     victim.been_hit(damage)
+  elif victim is Player:
+    print("player been hit:", damage)
+    victim.character_data.hp -= damage
 
 func _check_deaths():
   for combat in _combat_list:

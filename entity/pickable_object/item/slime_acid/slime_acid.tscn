@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://co24ethtya1s8"]
+
+[ext_resource type="PackedScene" uid="uid://70ubkmhktb56" path="res://entity/pickable_object/item/item.tscn" id="1_8cdkd"]
+[ext_resource type="Script" path="res://entity/pickable_object/item/slime_acid/slime_acid.gd" id="2_dh83n"]
+
+[node name="SlimeAcid" instance=ExtResource("1_8cdkd")]
+script = ExtResource("2_dh83n")

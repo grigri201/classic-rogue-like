@@ -36,7 +36,6 @@ func _on_map_initialized():
   set_cell(target_cell)
 
 func been_hit(damage: int):
-  print("enemy been hit:", damage)
   character_data.hp -= damage
   _animation_player.play("been_hit")
 

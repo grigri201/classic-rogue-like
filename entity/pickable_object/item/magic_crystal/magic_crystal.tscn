@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjhdnhgieih34"]
+
+[ext_resource type="PackedScene" uid="uid://70ubkmhktb56" path="res://entity/pickable_object/item/item.tscn" id="1_c73mj"]
+[ext_resource type="Script" path="res://entity/pickable_object/item/magic_crystal/magic_crystal.gd" id="2_dw4eh"]
+
+[node name="MagicCrystal" instance=ExtResource("1_c73mj")]
+script = ExtResource("2_dw4eh")
