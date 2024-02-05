@@ -8,6 +8,7 @@ func _ready():
   file.close()
 
 func enmey_data(ID = "0") -> EnemyData:
+  print(typeof(content))
   var enemy_data = EnemyData.new()
   enemy_data.id = ID
   enemy_data.key = content[ID]["key"]

@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bg86rbjuxefqc" path="res://ui/main_ui/main_ui.tscn" id="17_1lmkx"]
 [ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="18_8jxxs"]
 
-[sub_resource type="Resource" id="Resource_pamjx"]
+[sub_resource type="Resource" id="Resource_agjmj"]
 resource_local_to_scene = true
 script = ExtResource("5_p422j")
 room_base_size_limit = 5
@@ -60,7 +60,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" parent="." instance=ExtResource("6_oskp0")]
 unique_name_in_owner = true
-map_data = SubResource("Resource_pamjx")
+map_data = SubResource("Resource_agjmj")
 
 [node name="DungeonGenerator" parent="MapManager" instance=ExtResource("5_13jig")]
 
@@ -72,13 +72,12 @@ unique_name_in_owner = true
 
 [node name="EnemySpawner" parent="." instance=ExtResource("9_xi7ku")]
 unique_name_in_owner = true
-max_enemy = null
-boss_scene = null
+max_enemy = 1000
 enemy_scene = {
-ExtResource("9_dkh4x"): 100,
-ExtResource("11_43v8t"): 50,
-ExtResource("12_ng2kp"): 20,
-ExtResource("13_od2b7"): 30
+ExtResource("9_dkh4x"): 0,
+ExtResource("11_43v8t"): 100,
+ExtResource("12_ng2kp"): 0,
+ExtResource("13_od2b7"): 0
 }
 
 [node name="AstarGridManagerDebugger" parent="." instance=ExtResource("11_7ttd6")]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://hffdl5k4hipv"]
+[gd_scene load_steps=8 format=3 uid="uid://hffdl5k4hipv"]
 
 [ext_resource type="PackedScene" uid="uid://dy0x7ku3bnmtj" path="res://entity/character/enemy/enemy.tscn" id="1_68u3a"]
 [ext_resource type="Script" path="res://entity/character/enemy/slime/slime.gd" id="2_b132q"]
 [ext_resource type="PackedScene" uid="uid://dpp8qsr2mohqa" path="res://component/ai_component/ai/skill_ai/skill_ai.tscn" id="4_oeobl"]
 [ext_resource type="PackedScene" uid="uid://bb0s01cjuy87f" path="res://component/ai_component/ai/walk_around_ai/square_move_ai.tscn" id="4_qbdw6"]
 [ext_resource type="PackedScene" uid="uid://bxl7b56po4dpe" path="res://component/ai_component/ai/melee_ai/melee_ai.tscn" id="5_8ffsi"]
+[ext_resource type="PackedScene" uid="uid://casujnv1b1io4" path="res://component/ai_component/ai/chase_ai/chase_ai.tscn" id="6_qvndd"]
 [ext_resource type="PackedScene" uid="uid://b5sjqc4jcgibl" path="res://component/drop_component/drop_component.tscn" id="6_vy8vx"]
 
 [node name="Slime" instance=ExtResource("1_68u3a")]
@@ -15,6 +16,8 @@ id = "0"
 
 [node name="SquareMoveAi" parent="AiComponent" index="1" instance=ExtResource("4_qbdw6")]
 
-[node name="MeleeAi" parent="AiComponent" index="3" instance=ExtResource("5_8ffsi")]
+[node name="MeleeAi" parent="AiComponent" index="2" instance=ExtResource("5_8ffsi")]
+
+[node name="ChaseAi" parent="AiComponent" index="3" instance=ExtResource("6_qvndd")]
 
 [node name="DropComponent" parent="." index="6" instance=ExtResource("6_vy8vx")]

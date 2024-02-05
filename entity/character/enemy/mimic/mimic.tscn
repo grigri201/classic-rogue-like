@@ -7,7 +7,7 @@
 
 [node name="Mimic" instance=ExtResource("1_2pnns")]
 script = ExtResource("2_yevo8")
-id = "0"
+id = "3"
 
 [node name="SkillAi" parent="AiComponent" index="0" instance=ExtResource("3_30qmt")]
 

@@ -19,7 +19,7 @@ func update(_delta):
 # TODO: improve spawn algorithm
 func spawn_all_enemy():
   for enemy_resource in enemy_scene:
-    if _enemy_count == max_enemy:
+    if _enemy_count >= max_enemy:
       break
     var enemy_count = enemy_scene[enemy_resource]
     for i in range(enemy_count):
