@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cs1qj5xwmyv0t" path="res://manager/fsm/fsm.tscn" id="1_4mas1"]
 [ext_resource type="Script" path="res://scene/main.gd" id="1_f8cl6"]
 [ext_resource type="PackedScene" uid="uid://dwjhnwek4vgvm" path="res://manager/input_handler/input_handler.tscn" id="3_cmksk"]
+[ext_resource type="Resource" uid="uid://cmh72r4opljwh" path="res://resource/map_data/dungeon_data/dungeon_data.tres" id="5_4pm6k"]
 [ext_resource type="PackedScene" uid="uid://ctiedv5av3yed" path="res://manager/map_manager/map_generator/dungeon_generator/dungeon_generator.tscn" id="5_13jig"]
-[ext_resource type="Script" path="res://resource/map_data/dungeon_data/dungeon_data.gd" id="5_p422j"]
+[ext_resource type="Resource" uid="uid://l0uykc7aaxuy" path="res://resource/map_data/forest_data/forest_data.tres" id="6_1f2pi"]
 [ext_resource type="PackedScene" uid="uid://dng7ewi2jr40h" path="res://manager/map_manager/map_manager.tscn" id="6_oskp0"]
 [ext_resource type="PackedScene" uid="uid://cdqkunjh5b1vg" path="res://manager/fog_painter/fog_painter.tscn" id="8_wpgdg"]
 [ext_resource type="PackedScene" uid="uid://bwm1xvbfms86d" path="res://manager/combat_manager/combat_manager.tscn" id="9_bewdx"]
@@ -20,16 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://bqoatkkcp7n8o" path="res://ui/inventory_window/inventory_window.tscn" id="16_pfi7h"]
 [ext_resource type="PackedScene" uid="uid://bg86rbjuxefqc" path="res://ui/main_ui/main_ui.tscn" id="17_1lmkx"]
 [ext_resource type="Script" path="res://resource/character_data/player_data/player_data.gd" id="18_8jxxs"]
-
-[sub_resource type="Resource" id="Resource_agjmj"]
-resource_local_to_scene = true
-script = ExtResource("5_p422j")
-room_base_size_limit = 5
-room_count = 50
-max_width = 100
-max_height = 100
-connector_width_limit = [0, 1]
-cell_size = Vector2i(16, 16)
 
 [sub_resource type="Resource" id="Resource_08x1y"]
 resource_local_to_scene = true
@@ -60,7 +51,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" parent="." instance=ExtResource("6_oskp0")]
 unique_name_in_owner = true
-map_data = SubResource("Resource_agjmj")
+map_data_list = Array[Resource("res://resource/map_data/map_data.gd")]([ExtResource("5_4pm6k"), ExtResource("6_1f2pi")])
 
 [node name="DungeonGenerator" parent="MapManager" instance=ExtResource("5_13jig")]
 

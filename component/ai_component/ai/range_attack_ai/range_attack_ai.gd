@@ -15,7 +15,7 @@ func initialize():
   _line = get_node("Line2D")
 
 func execute() -> bool:
-  var distanceToPlayer = _enemy.get_distance_to((Vector2i(_player.global_position) - _map_data.cell_size / 2) / _map_data.cell_size)
+  var distanceToPlayer = _enemy.get_distance_to(_player.cell)
   if distanceToPlayer > _enemy.character_data.sight:
     return false
   _combat_manager.add_to_combat(_enemy, _player)

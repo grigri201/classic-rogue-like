@@ -31,7 +31,7 @@ func _check_area():
     current_direction_index += 1
 
 func execute() -> bool:
-  var distanceToPlayer = _enemy.get_distance_to((Vector2i(_player.global_position) - _map_data.cell_size / 2) / _map_data.cell_size)
+  var distanceToPlayer = _enemy.get_distance_to(_player.cell)
   if (distanceToPlayer <= _enemy.character_data.sight):
     return false
   _astar_grid_manager.astar_grid.set_point_solid(

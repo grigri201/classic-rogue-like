@@ -4,7 +4,7 @@ class_name MapGenerator
 var _rooms = []
 var room_cells: Array[Vector2i] = []
 var connector_cells: Array[Vector2i] = []
-var _map_data: DungeonData
+var _map_data: MapData
 var _region_index = 0
 var _regions: Dictionary = {}
 

@@ -3,12 +3,14 @@ class_name MapManager
 
 signal initialized()
 
-@export var map_data: MapData
+@export var map_data_list: Array[MapData]
+var map_data: MapData
 var map_generator: MapGenerator
 var _character_spawn_cells: Array[Vector2i] = []
 var _character_move_cells: Array[Vector2i] = []
 
 func initialize():
+  map_data = map_data_list[0]
   var child_count = get_child_count()
   assert(child_count == 1 and get_child(0) is MapGenerator)
   map_generator = get_child(0) as MapGenerator

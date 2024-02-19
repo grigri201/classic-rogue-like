@@ -1,10 +1,10 @@
 extends MapGenerator
-class_name DungeonGenerator
+class_name ForestGenerator
 
 func initialize():
   _map_manager = get_parent()
   _map_data = _map_manager.map_data
-  _tile_set = load("res://resource/tile_set/fantasy_tile_set.tres")
+  _tile_set = load("res://resource/tile_set/forest_tile_set.tres")
   _tile_map = get_tree().current_scene.get_node("%TileMap")
 
   _tile_map.tile_set = _tile_set

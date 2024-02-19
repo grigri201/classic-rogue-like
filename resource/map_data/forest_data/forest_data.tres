@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DungeonData" load_steps=2 format=3 uid="uid://l0uykc7aaxuy"]
+
+[ext_resource type="Script" path="res://resource/map_data/dungeon_data/dungeon_data.gd" id="1_tt8xc"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_tt8xc")
+room_base_size_limit = 5
+room_count = 50
+max_width = 100
+max_height = 100
+connector_width_limit = [0, 1]
+cell_size = Vector2i(16, 16)

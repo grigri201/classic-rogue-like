@@ -14,11 +14,11 @@ func initialize():
   _sprite = get_node("Sprite")
   _init_enemy()
   super.initialize()
+  map_manager.initialized.connect(_on_map_initialized)
   _skill_ai = get_node("AiComponent/SkillAi")
   _astar_grid_manager = get_tree().current_scene.get_node("%AstarGridManager")
   _animation_player = get_node("AnimationPlayer")
 
-  map_manager.initialized.connect(_on_map_initialized)
   var nodes = get_children()
   for node in nodes:
     if node is LateUpdateComponent:

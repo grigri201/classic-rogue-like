@@ -27,6 +27,14 @@ static func Terrain():
         "FLOOR": 2,
     }
 
+static func ForestTerrain():
+    return {
+        "GROUND": 0,
+        "GRASS": 1,
+        "TREE": 2,
+        "DEAD_TREE": 2,
+    }
+
 static func FogTerrain():
     return {
         "UNEXPLORED": 0,

@@ -1,0 +1,2 @@
+extends MapData
+class_name DungeonData

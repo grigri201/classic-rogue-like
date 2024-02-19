@@ -23,11 +23,11 @@ func initialize():
   _astar_grid_manager = get_tree().current_scene.get_node("%AstarGridManager")
   _main_ui = get_tree().current_scene.get_node("%MainUi")
 
-  _input_handler.initialize()
   _player.initialize()
-  _fog_painter.initialize()
   _enemy_spawner.initialize()
   _map_manager.initialize()
+  _input_handler.initialize()
+  _fog_painter.initialize()
   _inventory_window.initialize()
   _main_ui.initialize()
   # wait until frame is processed

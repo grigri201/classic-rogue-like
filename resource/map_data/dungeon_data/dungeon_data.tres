@@ -6,8 +6,8 @@
 resource_local_to_scene = true
 script = ExtResource("1_u1xd0")
 room_base_size_limit = 5
-room_count = 3
-max_width = 20
-max_height = 20
-winding_percent = 80
+room_count = 50
+max_width = 100
+max_height = 100
+connector_width_limit = [0, 1]
 cell_size = Vector2i(16, 16)

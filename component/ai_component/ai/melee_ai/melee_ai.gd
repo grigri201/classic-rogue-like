@@ -12,7 +12,7 @@ func initialize():
   _combat_manager = get_tree().current_scene.get_node("%CombatManager")
 
 func execute() -> bool:
-  var distanceToPlayer = _enemy.get_distance_to((Vector2i(_player.global_position) - _map_data.cell_size / 2) / _map_data.cell_size)
+  var distanceToPlayer = _enemy.get_distance_to(_player.cell)
   if distanceToPlayer > 1:
     return false
   _combat_manager.add_to_combat(_enemy, _player)
